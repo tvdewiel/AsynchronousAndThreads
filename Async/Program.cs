@@ -20,17 +20,19 @@ namespace Async
             //await ds.process(10, '4', true, false);
             //await ds.process(10, '5', true, false);
             List<Task> tasks = new List<Task>();
-            //tasks.Add(Task.Run(() => ds.calculating(10, '1')));
-            //tasks.Add(Task.Run(() => ds.calculating(10, '2')));
-            //tasks.Add(Task.Run(() => ds.calculating(10, '3')));
-            //tasks.Add(Task.Run(() => ds.calculating(10, '4')));
-            //tasks.Add(Task.Run(() => ds.calculating(10, '5')));
-            tasks.Add(ds.process(10, '1', false, true));
-            tasks.Add(ds.process(10, '2', false, true));
-            tasks.Add(ds.process(10, '3', false, true));
-            tasks.Add(ds.process(10, '4', false, true));
-            tasks.Add(ds.process(10, '5', false, true));
+            tasks.Add(Task.Run(() => ds.process(10, '1', false, true)));
+            tasks.Add(Task.Run(() => ds.process(10, '2', false, true)));
+            tasks.Add(Task.Run(() => ds.process(10, '3', false, true)));
+            tasks.Add(Task.Run(() => ds.process(10, '4', false, true)));
+            tasks.Add(Task.Run(() => ds.process(10, '5', false, true)));
             Task.WaitAll(tasks.ToArray());
+
+            //tasks.Add(ds.process(10, '1', false, true));
+            //tasks.Add(ds.process(10, '2', false, true));
+            //tasks.Add(ds.process(10, '3', false, true));
+            //tasks.Add(ds.process(10, '4', false, true));
+            //tasks.Add(ds.process(10, '5', false, true));
+            //Task.WaitAll(tasks.ToArray());
 
             stopwatch.Stop();
             Console.WriteLine();
