@@ -23,7 +23,7 @@ namespace Threads
             for(int i=0;i<n;i++)
             {
                 simulateCPUOperation();
-                //simulateIOOperation();
+                simulateIOOperation();
                 Console.Write(token);
             }
         }
